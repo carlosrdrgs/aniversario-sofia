@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite de Aniversário - Glass Edition</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="container animate__animated animate__fadeIn">
+    <h1 class="title animate__animated animate__fadeInDown animate__delay-1s">
+        <p>It's my</p>
+        <span>BIRTHDAY!</span>
+    </h1>
+
+    <p class="subtitle animate__animated animate__fadeIn animate__delay-2s">
+        Você é meu convidado para <br>
+        celebrar meu aniversário!
+    </p>
+
+    <div class="info animate__animated animate__fadeInUp animate__delay-2s">
+        <p class="local">
+            <strong>Local:</strong> Rua Abaete, 571 – Caiçaras
+        </p>
+        <p class="hora">
+            14:30 até 18:30
+        </p>
+        <button class="btn-confirmar" id="abrirModal">
+            Confirmar Presença
+        </button>
+    </div>
+</main>
+
+<div class="modal" id="modal">
+    <div class="modal-content animate__animated animate__zoomIn">
+        <span class="fechar" id="fecharModal">&times;</span>
+
+        <h2>Confirmar Presença</h2>
+
+        <form id="formConfirmacao">
+            <input type="text" id="nomeConvidado" placeholder="Nome do convidado" required>
+            <input type="text" id="nomeResponsavel" placeholder="Nome do responsável" required>
+            <input type="tel" id="telefone" placeholder="WhatsApp do responsável" required>
+
+            <button type="submit" id="btnEnviar">Confirmar</button>
+        </form>
+
+        <p class="mensagem-sucesso" id="mensagemSucesso"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

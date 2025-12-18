@@ -1,0 +1,165 @@
+/* Reset e Trava de Segurança */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Essencial para o formulário não quebrar */
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden; /* Impede rolagem lateral */
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Fundo Fixo */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: url("img/fundo-convite.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Container Principal Glassmorphism */
+.container {
+    max-width: 420px;
+    width: 90%;
+    padding: 50px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    color: #000000;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.title p { font-size: 24px; font-weight: 400; }
+.title span { font-size: 55px; font-weight: 800; display: block; }
+
+.subtitle {
+    color: #000000;
+    font-size: 18px;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+/* Bloco de Informações */
+.info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 25px;
+    color: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.local { font-size: 16px; margin-bottom: 8px; }
+.hora { font-size: 15px; margin-bottom: 20px; opacity: 0.8; }
+
+/* Botões */
+.btn-confirmar {
+    background: #f6b7c6;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-confirmar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(246, 183, 198, 0.4);
+}
+
+/* MODAL Glassmorphism */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(110, 110, 110, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    max-width: 360px;
+    width: 85%;
+    margin: 15vh auto;
+    padding: 40px 25px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.modal-content h2 { font-family: 'Playfair Display', serif; margin-bottom: 25px; font-size: 28px; }
+
+/* Inputs Corrigidos */
+.modal-content input {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.modal-content input:focus { background: rgba(255, 255, 255, 0.3); }
+.modal-content input::placeholder { color: rgba(255, 255, 255, 0.7); }
+
+.modal-content button {
+    background: #f6b7c6;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.fechar {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.mensagem-sucesso {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #fff;
+}

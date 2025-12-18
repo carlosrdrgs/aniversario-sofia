@@ -1,14 +1,14 @@
-/* Reset e Trava de Segurança */
+/* ====== RESET E TRAVA DE SEGURANÇA ====== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Essencial para o formulário não quebrar */
+    box-sizing: border-box;
 }
 
 body {
     min-height: 100vh;
     width: 100%;
-    overflow-x: hidden; /* Impede rolagem lateral */
+    overflow-x: hidden; /* Trava rolagem horizontal */
     font-family: 'Raleway', sans-serif;
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@ body {
     position: relative;
 }
 
-/* Fundo Fixo */
+/* ====== FUNDO FIXO ====== */
 body::before {
     content: "";
     position: fixed;
@@ -28,25 +28,34 @@ body::before {
     background-position: center;
 }
 
-/* Container Principal Glassmorphism */
+/* ====== CONTAINER PRINCIPAL (GLASSMORPHISM) ====== */
 .container {
     max-width: 420px;
     width: 90%;
     padding: 50px 25px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    
+    /* Efeito Vidro Premium */
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
     border-radius: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    
+    /* Bordas com profundidade */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
+/* ====== TEXTOS ====== */
 .title {
     font-family: 'Playfair Display', serif;
     color: #000000;
     margin-bottom: 20px;
     line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3); /* Brilho suave para ler no escuro */
 }
 
 .title p { font-size: 24px; font-weight: 400; }
@@ -57,89 +66,104 @@ body::before {
     font-size: 18px;
     margin-bottom: 40px;
     line-height: 1.5;
+    font-weight: 500;
 }
 
-/* Bloco de Informações */
+/* ====== BLOCO DE INFORMAÇÕES ====== */
 .info {
     background: rgba(255, 255, 255, 0.1);
     padding: 25px;
     border-radius: 25px;
     color: #000000;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
 }
 
-.local { font-size: 16px; margin-bottom: 8px; }
-.hora { font-size: 15px; margin-bottom: 20px; opacity: 0.8; }
+.local { font-size: 16px; margin-bottom: 8px; font-weight: 700; }
+.hora { font-size: 15px; margin-bottom: 20px; opacity: 0.9; }
 
-/* Botões */
+/* ====== BOTÕES ====== */
 .btn-confirmar {
-    background: #f6b7c6;
+    background: rgba(246, 183, 198, 0.85); /* Rosa Glass */
+    backdrop-filter: blur(4px);
     color: #fff;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
-    padding: 15px 35px;
+    padding: 16px 35px;
     font-size: 18px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(246, 183, 198, 0.4);
 }
 
 .btn-confirmar:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(246, 183, 198, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    background: rgba(246, 183, 198, 1);
+    box-shadow: 0 6px 20px rgba(246, 183, 198, 0.5);
 }
 
-/* MODAL Glassmorphism */
+/* ====== MODAL (GLASSMORPHISM) ====== */
 .modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(110, 110, 110, 0.5);
+    background: rgba(0, 0, 0, 0.4); /* Overlay mais escuro para foco */
     backdrop-filter: blur(8px);
     z-index: 1000;
 }
 
 .modal-content {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     max-width: 360px;
     width: 85%;
     margin: 15vh auto;
     padding: 40px 25px;
     border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     position: relative;
     text-align: center;
     color: #fff;
 }
 
-.modal-content h2 { font-family: 'Playfair Display', serif; margin-bottom: 25px; font-size: 28px; }
+.modal-content h2 { 
+    font-family: 'Playfair Display', serif; 
+    margin-bottom: 25px; 
+    font-size: 28px; 
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
 
-/* Inputs Corrigidos */
+/* ====== INPUTS GHOST/GLASS ====== */
 .modal-content input {
     width: 100%;
     padding: 14px 18px;
     margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 15px;
     color: #fff;
-    font-size: 15px;
+    font-size: 16px; /* Evita zoom automático no iOS */
     outline: none;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
-.modal-content input:focus { background: rgba(255, 255, 255, 0.3); }
-.modal-content input::placeholder { color: rgba(255, 255, 255, 0.7); }
+.modal-content input:focus { 
+    background: rgba(255, 255, 255, 0.3); 
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.modal-content input::placeholder { color: rgba(255, 255, 255, 0.8); }
 
 .modal-content button {
     background: #f6b7c6;
     width: 100%;
-    padding: 15px;
+    padding: 16px;
     border: none;
     border-radius: 40px;
     color: white;
@@ -147,7 +171,10 @@ body::before {
     font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
+    transition: background 0.3s;
 }
+
+.modal-content button:active { transform: scale(0.98); }
 
 .fechar {
     position: absolute;
@@ -156,11 +183,15 @@ body::before {
     font-size: 28px;
     cursor: pointer;
     color: #fff;
+    opacity: 0.7;
+    transition: 0.3s;
 }
+
+.fechar:hover { opacity: 1; }
 
 .mensagem-sucesso {
     margin-top: 15px;
     font-weight: bold;
     color: #fff;
-
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
